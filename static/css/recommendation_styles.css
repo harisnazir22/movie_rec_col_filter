@@ -1,0 +1,40 @@
+/* recommendation_styles.css */
+
+/* Body styles for recommendation.html */
+.recommendation-body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Set background color */
+    background-image: url('/static/images/panda.jpg'); /* Set background image */
+    background-size: 90%; /* Cover the entire background */
+    background-position: center; /* Center the background image */
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styles */
+.recommendation-body h1 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Recommendations list styles */
+.recommendation-body ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0 auto;
+    width: 50%;
+    margin-top: 30px;
+}
+
+/* Recommendation item styles */
+.recommendation-body li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Recommendation item text
+

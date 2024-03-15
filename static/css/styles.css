@@ -1,0 +1,83 @@
+/* styles.css */
+
+/* Body styles for index.html */
+.index-body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Set background color */
+    background-image: url('/static/images/dragon.jpg'); /* Set background image */
+    background-size: 90%; /* Cover the entire background */
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styles */
+.index-body h1 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Form styles */
+.index-body form {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Label styles */
+.index-body label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Input styles */
+.index-body input[type="text"] {
+    width: calc(100% - 30px);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* Select styles */
+.index-body select {
+    width: calc(100% - 30px);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* Button styles */
+.index-body button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007bff; /* Set button background color */
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.index-body button[type="submit"]:hover {
+    background-color: #0056b3; /* Darker color on hover */
+}
+
+/* Movie list styles */
+.index-body #movieList {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid black;
+    max-height: 700px;
+    overflow-y: auto;
+    width: calc(50% - 32px); /* Adjust width to match input/select width */
+}
+
+/* Movie item styles */
+.index-body #movieList div {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.index-body #movieList div:hover {
+    background-color: #f0f0f0; /* Light background color on hover */
+}

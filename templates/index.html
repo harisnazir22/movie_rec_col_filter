@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommender System</title>
+    <script>
+        function showMovieList() {
+            // Get the element containing the movie list
+            var movieList = document.getElementById("movieList");
+
+            // Fetch movie data from the server using AJAX
+            fetch('/get_movie_list')
+                .then(response => response.json())
+                .then(data => {
+                    // Clear existing movie list
+                    movieList.innerHTML = '';
+            
+                    // Populate movie list with titles
+                    data.forEach(movieTitle => {
+                        var movieItem = document.createElement('option');
+                        movieItem.textContent = movieTitle;
+                        movieList.appendChild(movieItem);
+                    });
+
+                    // Show the movie list
+                    movieList.style.display = "block";
+                })
+                .catch(error => console.error('Error fetching movie list:', error));
+        }
+
+        function toggleMovieList() {
+            var movieList = document.getElementById("movieList");
+            if (movieList.style.display === "none") {
+                showMovieList();
+            } else {
+                movieList.style.display = "none";
+            }
+        }
+
+        function selectMovie() {
+            var movieInput = document.getElementById("movie");
+            var movieList = document.getElementById("movieList");
+            movieInput.value = movieList.options[movieList.selectedIndex].text;
+            movieList.style.display = "none";
+        }
+    </script>
+    
+</head>
+<body class="index-body">
+    <h1>Movie Recommender System</h1>
+    <form action="/recommendation" method="post">
+        <label for="movie">Search for a movie:</label>
+        <!-- Add onclick attribute to call the JavaScript function -->
+        <input type="text" name="search_movie" id="movie" onclick="toggleMovieList()">
+        <select id="movieList" size="5" style="display: none;" onclick="selectMovie()">
+        </select>
+        <button type="submit">Recommend</button>
+    </form>
+</body>
+</html>
+
+
+
+
